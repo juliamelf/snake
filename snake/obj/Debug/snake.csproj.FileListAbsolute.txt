@@ -1,0 +1,6 @@
+D:\Projects\snake\snake\bin\Debug\snake.exe.config
+D:\Projects\snake\snake\bin\Debug\snake.exe
+D:\Projects\snake\snake\bin\Debug\snake.pdb
+D:\Projects\snake\snake\obj\Debug\snake.csprojResolveAssemblyReference.cache
+D:\Projects\snake\snake\obj\Debug\snake.exe
+D:\Projects\snake\snake\obj\Debug\snake.pdb
