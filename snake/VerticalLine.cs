@@ -8,7 +8,7 @@ namespace snake
 {
     class VerticalLine : Figure
     {      
-
+        //Конструктор класса, позволяет создавать объект класса - вертикальную линию, состоящую из точек
         public VerticalLine(int yUp, int yDown, int x, char sym)
         {
             plist = new List<Point>();

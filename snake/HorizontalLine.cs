@@ -8,6 +8,7 @@ namespace snake
 {
     class HorizontalLine : Figure
     {
+        //Конструктор класса, позволяет создавать объект класса - горизонтальную линию, состоящую из точек
         public HorizontalLine(int xLeft, int xRight, int y, char sym)
         {
             plist = new List<Point>();
