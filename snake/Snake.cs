@@ -9,7 +9,7 @@ namespace snake
     class Snake : Figure
     {
 
-        //Переменные класса
+        //Поля класса
         Direction direction; 
 
         //Конструктор класса для создания экземпляра класса с переменными

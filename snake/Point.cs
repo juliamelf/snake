@@ -9,7 +9,7 @@ namespace snake
     class Point
     {
 
-        // Переменные класса 
+        // Поля класса 
         public int x;
         public int y;
         public char sym;

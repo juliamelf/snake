@@ -9,7 +9,7 @@ namespace snake
     class FoodCreator
     {
 
-        //Переменные класса
+        //Поля класса
         int mapWidht;
         int mapHeight;
         char sym;

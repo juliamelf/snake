@@ -9,7 +9,7 @@ namespace snake
     class Walls
     {
 
-        //Переменные класса
+        //Поля класса
         List<Figure> wallList;
 
         //Конструктор класса
