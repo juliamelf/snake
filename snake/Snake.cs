@@ -44,7 +44,21 @@ namespace snake
             Point nextPoint = new Point(head);
             nextPoint.Move(1, direction);
             return nextPoint;
-        }    
+        }   
+        
+        //Метод класса, определяет не встретилась ли змейка со своим хвостом
+        internal bool IsHitTail()
+        {
+            var head = plist.Last();
+            for (int i = 0; i < plist.Count - 2; i++)
+            {
+                if (head.IsHit(plist[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+        } 
         
         //Метод класса для распознавания нажатия клавиш и изменения направления змейки
         public void HandleKey(ConsoleKey key)

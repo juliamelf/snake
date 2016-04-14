@@ -12,16 +12,10 @@ namespace snake
         static void Main(string[] args)
         {
             Console.SetBufferSize(88, 25);
-                        
-            // Отрисовка рамочки
-            HorizontalLine upline = new HorizontalLine(0, 78, 0, '+');
-            HorizontalLine downline = new HorizontalLine(0, 78, 24, '+');
-            VerticalLine leftline = new VerticalLine(0, 24, 0, '+');
-            VerticalLine rightline = new VerticalLine(0, 24, 78, '+');
-            upline.Draw();
-            downline.Draw();
-            leftline.Draw();
-            rightline.Draw();
+
+            //Отрисовка стен - рамочки
+            Walls walls = new Walls(88, 25);
+            walls.Draw();           
 
             //Отрисовка змейки
             Point p = new Point(4, 5, '*');
@@ -35,12 +29,16 @@ namespace snake
             //Управление змейкой
             while (true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTail()) //если змейка натолкнулась на препятствие или хвост, то гейм овер
+                {
+                    break;
+                }
                 if (snake.Eat(food)) // если змейка поела, то создаем новую еду, иначе змейка двигается дальше
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
                 }
-                else
+                else //иначе - двигаемся дальше
                 {
                     snake.Move();
                 }
