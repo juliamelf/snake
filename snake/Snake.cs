@@ -57,7 +57,20 @@ namespace snake
                 direction = Direction.DOWN;
             else if (key == ConsoleKey.UpArrow)
                 direction = Direction.UP;
-
         }    
+
+        //Метод класса для распознавания съела ли змейка еду или нет, возвращает true/false
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food)) // если точка головы совпадает с точкой еды, то змейка ест
+            {
+                food.sym = head.sym; //меняется символ еды на символ змейки
+                plist.Add(food); //добавляется длина змейки
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

@@ -52,6 +52,12 @@ namespace snake
 
         }
 
+        //Метод класса, определяет совпадает ли точка головы змейки с точкой еды
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
         //Метод класса, рисует объект класса (точку)
         public void Draw()
         {

@@ -28,16 +28,31 @@ namespace snake
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
             //Управление змейкой
             while (true)
             {
+                if (snake.Eat(food)) // если змейка поела, то создаем новую еду, иначе змейка двигается дальше
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+                Thread.Sleep(100);
+
                 if (Console.KeyAvailable) // была ли нажата какая-либо клавиша
                 {
                     ConsoleKeyInfo key = Console.ReadKey(); // получаем значение нажатой клавиши
                     snake.HandleKey(key.Key); // изменяем направление змейки
-                }
-                Thread.Sleep(100);
-                snake.Move();
+                }               
+                
             }
 
             //Чтобы не отображался курсор
